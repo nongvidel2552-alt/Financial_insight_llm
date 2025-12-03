@@ -78,6 +78,7 @@ from nic_analyzer import generate_dashboard_data
 from pprint import pprint
 
 params = {
+   
     "net_income_monthly": 30000,
     "needs_food": 5000,
     "needs_housing": 7000,
@@ -99,8 +100,8 @@ pprint(result)
 ผลลัพธ์จะมี 2 ส่วน:
 
 1. numbers → ตัวเลขทางการเงิน
-{
-  "health_score": 36.0,
+ {
+   "health_score": 36.0,
   "actual_needs_pct": 103.0,
   "actual_wants_pct": 20.0,
   "actual_savings_pct": -23.0,
@@ -111,7 +112,7 @@ pprint(result)
   "culprit_amount": 7000
 }
 
-2. panels → ข้อความสรุป 3 ช่องจาก LLM
+3. panels → ข้อความสรุป 3 ช่องจาก LLM
 {
   "left_panel": "ค่าใช้จ่ายจำเป็นอยู่ที่ 103% เกินเกณฑ์ 50% โดยหมวดที่อยู่อาศัยใช้ 7000 บาท เป็นส่วนที่สูงที่สุด",
   "middle_panel": "การเงินอยู่ในระดับวิกฤต เพราะใช้จ่ายเกินรายได้และไม่มีเงินออม",
