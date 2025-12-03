@@ -77,7 +77,7 @@ USER_PROMPT_TEMPLATE = """
 """
 
 # ------------------------------------
-# 3) ฟังก์ชันเรียก Typhoon
+# 3) Call Typhoon
 # ------------------------------------
 def call_typhoon(user_prompt: str) -> dict:
     """
@@ -109,7 +109,7 @@ def call_typhoon(user_prompt: str) -> dict:
 
 
 # ------------------------------------
-# 4) เทสไฟล์นี้เดี่ยว ๆ (ไม่บังคับ)
+# 4) TEST
 # ------------------------------------
 if __name__ == "__main__":
     dummy_result = {
