@@ -171,7 +171,7 @@ Survival Ratio
   "right_panel": "..."
 }
 
-4️⃣ Backend/Frontend ใช้ข้อมูลผ่านฟังก์ชันเดียว:
+4️⃣ Backend/Frontend เรียก 👇
 
 from nic_analyzer import generate_dashboard_data
 
