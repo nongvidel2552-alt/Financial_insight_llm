@@ -27,6 +27,8 @@ Financial_insight_salary_after_tax/
 
 ├── llm_client.py          # เชื่อม Typhoon + System/User Prompt
 
+├── main.py                # API
+
 ├── nic_analyzer.py        # วิเคราะห์ตัวเลขทั้งหมด + การคำนวณ score
 
 ├── playground.py          # ตัวอย่างการใช้งาน เล่น ๆๆๆ
