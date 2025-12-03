@@ -1,4 +1,4 @@
-# Financial Insight LLM (ยังแค่ของ Salary after tax นะะตอนนี้)
+# Financial Insight LLM (ยังแค่ของ Salary after tax)
 
 ## API Endpoint: https://financial-insight-llm.onrender.com/Financial_Insight
 
