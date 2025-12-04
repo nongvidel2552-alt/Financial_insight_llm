@@ -21,11 +21,16 @@ class FinancialHealthAnalyzer:
         needs_utilities: float,
         needs_insurance: float,
         needs_debt: float,
-        wants_misc: float,
+        wants_misc: float = 0.0,
     ) -> Dict[str, Any]:
         # ---- Safety check ----
         if net_income_monthly <= 0:
             raise ValueError("net_income_monthly ต้องมากกว่า 0")
+        # กันกรณี None / ค่าติดลบใน want_misc ฮ้าฟฟฟ
+        safe_wants_misc = wants_misc or 0.0
+        if safe_wants_misc < 0:
+            safe_wants_misc = 0.0
+
 
         # -------------------------
         # 1. Basic Calculations
@@ -212,6 +217,18 @@ def generate_dashboard_data(params: Dict[str, float]) -> Dict[str, Any]:
     return: dict ที่มีทั้งตัวเลข (numbers) + ข้อความ 3 panel (panels)
     """
     analyzer = FinancialHealthAnalyzer()
+
+    # กันกรณี wants_mics ไม่มาใน params
+    clean_params = {
+        "net_income_monthly": params["net_income_monthly"],
+        "needs_food": params["needs_food"],
+        "needs_housing": params["needs_housing"],
+        "needs_transport": params["needs_transport"],
+        "needs_utilities": params["needs_utilities"],
+        "needs_insurance": params["needs_insurance"],
+        "needs_debt": params["needs_debt"],
+        "wants_misc": params.get("wants_misc", 0.0) or 0.0,
+    }
 
     # 1) คำนวณตัวเลขทั้งหมด
     numbers = analyzer.analyze_nic_data(**params)
