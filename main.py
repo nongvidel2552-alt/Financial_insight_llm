@@ -1,3 +1,5 @@
+from typing import Optional
+
 from fastapi import FastAPI
 from pydantic import BaseModel
 from nic_analyzer import generate_dashboard_data
@@ -12,7 +14,7 @@ class user_data(BaseModel):
     needs_utilities: float = 1500
     needs_insurance: float = 800
     needs_debt: float = 3000
-    wants_misc: float = 5000  # optional ก็ได้
+    wants_misc: Optional[float] = 0.0  # optional
 
 @app.post("/Financial_Insight")
 def financial_insight(data: user_data):
