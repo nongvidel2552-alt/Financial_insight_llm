@@ -2,9 +2,18 @@ from typing import Optional
 
 from fastapi import FastAPI
 from pydantic import BaseModel
+from starlette.middleware.cors import CORSMiddleware
 from nic_analyzer import generate_dashboard_data
 
 app = FastAPI(title="Financial Insight LLM API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class user_data(BaseModel):
     net_income_monthly: float = 30000
